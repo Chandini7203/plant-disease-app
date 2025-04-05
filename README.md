@@ -1,120 +1,130 @@
+# 🌿 Plant Leaf Disease Detection - ML Based Web App
 
-# 🌿 Plant Leaf Disease Detection App
-
-A deep learning powered web app that detects diseases in plant leaves using Convolutional Neural Networks (CNN). Upload a leaf image, identify the disease, and get actionable precautions instantly — with multilingual support and voice output!
+A machine learning–based web application for detecting plant leaf diseases using Convolutional Neural Networks (CNN). Users can upload an image of a leaf to receive instant disease predictions and view relevant precautions.
 
 ---
 
 ## 🚀 Features
 
-- 🔍 Real-time disease prediction using CNN
-- 📢 Voice output of disease name
-- 🌐 Multilingual support (English, Telugu)
-- 💡 Precaution suggestions
-- 🌑 Beautiful dark-themed UI
-- 🖼️ Image upload and preview functionality
+- 📷 Upload plant leaf images via a simple UI
+- 🧠 CNN-based ML model predicts disease accurately
+- 🔊 Voice output of predicted disease
+- 💡 Displays relevant precautions for each disease
+- 🌐 Full-stack app: React (frontend) + Flask (backend)
 
 ---
 
-## 🧠 Model
-
-- **Model**: CNN (Trained using TensorFlow)
-- **Dataset**: [PlantVillage Dataset](https://www.kaggle.com/datasets/emmarex/plantdisease)
-- **Classes**:
-  - Apple Black Rot, Grape Black Rot, Potato Late Blight, etc.
-  - Healthy variants included
-
----
-
-## 📸 Screenshots
-
-### 🔹 Home Page
-![Home Page](images/homepage.png)
-
-### 🔹 Disease Prediction
-![Prediction](images/prediction.png)
-
----
-
-## 🛠️ Tech Stack
-
-| Component   | Technology     |
-|------------|----------------|
-| Frontend   | React.js       |
-| Backend    | Flask (Python) |
-| Model      | TensorFlow     |
-| Styling    | CSS (Dark Theme) |
-| Voice      | Web Speech API |
-| Hosting    | Local / GitHub |
-
----
-
-## ⚙️ Installation
+## 📂 Project Structure
 
 ```bash
-git clone https://github.com/Chandini7203/plant-disease-app.git
-cd plant-disease-app
+plant-disease-app/
+│
+├── backend/
+│   ├── app.py
+│   ├── model.py
+│   ├── model_trainer.py
+│   ├── precautions.json
+│   ├── saved_model/
+│   │   └── plant_disease_model.h5
+│   └── ...
+│
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── FileUpload.js
+│   │   │   └── Result.js
+│   └── ...
+│
+├── dataset/                   # PlantVillage images
+├── images/                    # Screenshots for README
+├── temp/                      # Uploaded images
+├── templates/                 # Flask fallback HTML
+└── README.md
 ```
 
-### Backend
+---
 
+## 🧠 Model Information
+
+- **Model Type**: Convolutional Neural Network (CNN)
+- **Framework**: TensorFlow / Keras
+- **Dataset**: [PlantVillage (Kaggle)](https://www.kaggle.com/datasets/emmarex/plantdisease)
+- **Accuracy**: ~95% on test data
+- **Model Output**: Disease class name (string)
+
+---
+
+## ⚙️ Running the Project Locally
+
+### 1. Backend Setup
 ```bash
 cd backend
 pip install -r requirements.txt
 python app.py
 ```
 
-### Frontend
-
+### 2. Frontend Setup
 ```bash
 cd frontend
 npm install
 npm start
 ```
 
----
-
-## 🧪 How it Works
-
-1. Upload an image of the plant leaf 🌿
-2. App sends image to Flask backend 📤
-3. Model processes image and predicts disease 🧠
-4. Output shown on screen with precautions & voice output 🗣️
+Now open your browser at [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## 💬 Voice + Language Support
+## 📸 Screenshots
 
-- Voice announces the **disease name**
-- Language selector toggles between **English and Telugu**
-- Descriptions shown based on selected language
+### 🏠 Homepage
 
----
-
-## 🧼 Precautions
-
-Each disease returns:
-- Short description
-- Suggested precautions
-- Preventive actions
+<!-- Paste homepage image below -->
+![Homepage](./images/homepage.png)
 
 ---
 
-## 🤝 Contributors
+### 📤 Uploading a Leaf Image
 
-- 👩‍💻 Chandini7203 — Fullstack Developer & Innovator
-- 🤖 AI Model Trainer — BLIP, TensorFlow
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
+<!-- Paste upload page image below -->
+![Upload Page](./images/upload.png)
 
 ---
 
-## 🙌 Acknowledgements
+### 🧾 Prediction Result with Voice Output
 
-- PlantVillage Dataset
-- TensorFlow & React communities
-- All open-source contributors!
+<!-- Paste result screenshot below -->
+![Prediction Result](./images/result.png)
+
+---
+
+### 💡 Precautions Page
+
+<!-- Paste precautions screenshot below -->
+![Precautions](./images/precautions.png)
+
+---
+
+## 📌 Precaution Data
+
+Precautions are stored in `backend/precautions.json`. After predicting the disease, users can view the suggested measures to prevent or treat the disease using the **Precautions** button on the interface.
+
+---
+
+## ✅ Tech Stack
+
+| Layer        | Technology         |
+|--------------|--------------------|
+| Frontend     | React.js           |
+| Backend      | Flask (Python)     |
+| ML Model     | CNN (TensorFlow)   |
+| Dataset      | PlantVillage       |
+
+---
+
+## 💡 Possible Future Enhancements
+
+- 🌐 Deploy to cloud (Render / Hugging Face Spaces)
+- 📱 Improve mobile responsiveness
+- 🗣️ Add multi-language support (currently only voice output is implemented)
+
+---
