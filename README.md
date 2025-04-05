@@ -86,15 +86,14 @@ Now open your browser at [http://localhost:3000](http://localhost:3000)
 ### 📤 Uploading a Leaf Image
 
 <!-- Paste upload page image below -->
-![Upload Page](./images/upload.png)
+![Upload Page](./images/uploading.png)
 
 ---
 
 ### 🧾 Prediction Result with Voice Output
 
 <!-- Paste result screenshot below -->
-![Prediction Result](./images/result.png)
-
+![Prediction Result](./images/prediction_result.png)
 ---
 
 ### 💡 Precautions Page
