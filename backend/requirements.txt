@@ -6,3 +6,4 @@ flask
 opencv-python
 scikit-learn
 pillow
+flask-cors
