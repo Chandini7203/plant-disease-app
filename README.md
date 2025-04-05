@@ -70,7 +70,7 @@ npm install
 npm start
 ```
 
-Now open your browser at [http://localhost:3000](http://localhost:3000)
+Now open your browser at [http://localhost:5173/](http://localhost:5173/)
 
 ---
 
