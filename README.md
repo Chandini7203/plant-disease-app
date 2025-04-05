@@ -67,7 +67,7 @@ python app.py
 ```bash
 cd frontend
 npm install
-npm start
+npm run dev
 ```
 
 Now open your browser at [http://localhost:5173/](http://localhost:5173/)
@@ -105,7 +105,7 @@ Now open your browser at [http://localhost:5173/](http://localhost:5173/)
 
 ## 📌 Precaution Data
 
-Precautions are stored in `backend/precautions.json`. After predicting the disease, users can view the suggested measures to prevent or treat the disease using the **Precautions** button on the interface.
+Precautions are stored in `backend/precautions.js`. After predicting the disease, users can view the suggested measures to prevent or treat the disease using the **Precautions** button on the interface.
 
 ---
 
