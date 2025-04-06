@@ -9,11 +9,8 @@ import tensorflow as tf
 app = Flask(__name__)
 CORS(app)
 
-# Load TFLite model
-interpreter = tf.lite.Interpreter(model_path=os.path.join("saved_model", "plant_disease_model.tflite"))
-interpreter.allocate_tensors()
-input_details = interpreter.get_input_details()
-output_details = interpreter.get_output_details()
+# Load Keras model (.h5)
+model = tf.keras.models.load_model(os.path.join("saved_model", "plant_disease_model.h5"))
 
 # Class labels
 class_names = [
@@ -46,16 +43,10 @@ def predict():
         img_array = np.array(image).astype('float32') / 255.0
         img_array = np.expand_dims(img_array, axis=0)
 
-        # Ensure dtype matches model input
-        img_array = img_array.astype(input_details[0]['dtype'])
-
-        # Run TFLite prediction
-        interpreter.set_tensor(input_details[0]['index'], img_array)
-        interpreter.invoke()
-        output_data = interpreter.get_tensor(output_details[0]['index'])[0]
-
-        predicted_class = class_names[np.argmax(output_data)]
-        confidence = float(np.max(output_data))
+        # Predict
+        prediction = model.predict(img_array)
+        predicted_class = class_names[np.argmax(prediction)]
+        confidence = float(np.max(prediction))
 
         return jsonify({
             "prediction": predicted_class,
