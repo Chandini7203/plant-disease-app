@@ -7,3 +7,4 @@ opencv-python
 scikit-learn
 pillow
 flask-cors
+gunicorn
