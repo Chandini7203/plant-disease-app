@@ -13,7 +13,7 @@ function FileUpload({ setResult }) {
     const formData = new FormData();
     formData.append("file", image);
 
-    const response = await fetch("http://127.0.0.1:5000/predict", {
+    const response = await fetch("https://plant-disease-app-production.up.railway.app/predict", {
       method: "POST",
       body: formData,
     });
