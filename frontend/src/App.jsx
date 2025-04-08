@@ -23,8 +23,7 @@ function App() {
     formData.append('file', image);
 
     try {
-      const response = await axios.post('https://plant-disease-app-production.up.railway.app/predict', formData);
-
+      const response = await axios.post('https://<your-railway-subdomain>.up.railway.app/predict', formData);
       const { prediction } = response.data;
       setPrediction(prediction);
       setPrecautionsVisible(false);
