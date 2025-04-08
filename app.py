@@ -29,18 +29,36 @@ class_names = ['Apple___Black_rot', 'Apple___healthy', 'Apple___rust', 'Apple___
                'Tomato___Tomato_Yellow_Leaf_Curl_Virus', 'Tomato___Tomato_mosaic_virus', 
                'Tomato___healthy']
 
-@app.route('/predict', methods=['POST'])
+@app.route("/predict", methods=["POST"])
 def predict():
-    file = request.files['file']
-    img = Image.open(io.BytesIO(file.read()))
-    img = img.resize((224, 224))
-    img = np.array(img) / 255.0
-    img = np.expand_dims(img, axis=0)
+    try:
+        if 'file' not in request.files:
+            return jsonify({"error": "No image part in the request"}), 400
 
-    predictions = model.predict(img)
-    predicted_class = class_names[np.argmax(predictions[0])]
+        file = request.files['file']
+        if file.filename == '':
+            return jsonify({"error": "No selected file"}), 400
 
-    return jsonify({'class': predicted_class})
+        # Read and preprocess
+        image_bytes = file.read()
+        image = Image.open(io.BytesIO(image_bytes)).convert("RGB")
+        image = image.resize((128, 128))
+        img_array = np.array(image).astype('float32') / 255.0
+        img_array = np.expand_dims(img_array, axis=0)
+
+        # Predict
+        predictions = model.predict(img_array)
+        predicted_class = class_names[np.argmax(predictions[0])]
+        confidence = float(np.max(predictions[0]))
+
+        return jsonify({
+            "prediction": predicted_class,
+            "confidence": confidence
+        })
+
+    except Exception as e:
+        print("🔥 Exception occurred:", str(e))
+        return jsonify({"error": str(e)}), 500
 
 @app.route('/')
 def home():
