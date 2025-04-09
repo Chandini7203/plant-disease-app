@@ -23,7 +23,7 @@ function App() {
     formData.append('file', image);
 
     try {
-      const response = await axios.post('https://<your-railway-subdomain>.up.railway.app/predict', formData);
+      const response = await axios.post('http://127.0.0.1:5000/predict', formData);
       const { prediction } = response.data;
       setPrediction(prediction);
       setPrecautionsVisible(false);
