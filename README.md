@@ -1,126 +1,137 @@
 # 🌿 Plant Leaf Disease Detection using Machine Learning
 
-A full-stack web app that identifies diseases in plant leaves using a trained Convolutional Neural Network (CNN). Built with React and Flask, this project empowers farmers and agriculturalists by offering a fast, user-friendly platform to diagnose plant health with image uploads. The app also provides disease-specific precautions and voice-based prediction output to enhance accessibility.
+A full-stack web application to detect diseases in plant leaves using a **Convolutional Neural Network (CNN)** model. Users can upload a leaf image and receive disease predictions with confidence score and precautionary advice. Designed for accessibility and ease of use.
 
 ---
 
-## 🧠 Project Overview
+## 🧠 Overview
 
-- **Goal**: Detect diseases in plant leaves using image-based ML model
-- **Model**: CNN trained on the PlantVillage dataset
-- **Frontend**: React (with Vite)
-- **Backend**: Flask + TensorFlow
-- **Voice Feature**: Speaks out the prediction (only for disease name)
-- **Extra Modules Used**: `gTTS` for voice, `flask-cors` for CORS handling, `numpy`, `PIL`, etc.
+- **Goal**: Detect plant leaf diseases through image classification  
+- **Model**: CNN (trained on PlantVillage dataset)  
+- **Accuracy Achieved**: ~94% on validation data  
+- **Frontend**: React (Vite)  
+- **Backend**: Flask (Python)  
+- **Voice Output**: Basic browser-based speech synthesis for prediction result  
+- **Deployment**: Locally run on different ports using Flask + React
 
 ---
 
-## 📂 Project Structure
+## 📁 Folder Structure
 
 ```
 plant-disease-app/
 │
 ├── backend/
-│   ├── app.py
-│   ├── utils/
-│   └── saved_model/
-│       └── plant_disease_model.h5
+│   ├── app.py                         # Flask server with prediction route
+│   ├── saved_model/
+│   │   └── plant_disease_model.h5     # Trained CNN model
 │
 ├── frontend/
 │   ├── src/
-│   └── index.html
+│   │   └── App.jsx                    # React UI logic
+│   ├── index.html
 │
-├── dataset/
-│   └── (Training images)
-│
-├── images/
+├── images/                            # Screenshots for README
 │   ├── homepage.png
-│   ├── upload.png
-│   ├── prediction.png
-│   └── precautions.png
+│   ├── uploading.png
+│   ├── prediction_result.png
+│   ├── precautions.png
 │
-├── requirements.txt
+├── requirements.txt                   # Backend Python dependencies
 └── README.md
 ```
 
 ---
 
-## ⚙️ Installation Guide
+## ⚙️ How to Run the Project Locally
 
-### 1. 📥 Clone the Repository
+### 🔧 1. Clone the Repository
+
 ```bash
 git clone https://github.com/Chandini7203/plant-disease-app.git
 cd plant-disease-app
 ```
 
-### 2. 📦 Install Backend Requirements
+### 🧪 2. Setup and Start the Backend
+
+> Make sure you're in the root directory
+
 ```bash
 pip install -r requirements.txt
-```
-
-### 3. 🔁 Start the Backend Server
-```bash
 cd backend
 python app.py
 ```
 
-### 4. 🌐 Start the Frontend App
+### 🌐 3. Start the Frontend
+
 ```bash
 cd ../frontend
 npm install
 npm run dev
 ```
 
+Now visit: [http://localhost:5173](http://localhost:5173)
+
 ---
 
 ## 📸 Screenshots
 
-- 🏠 **Homepage**  
-  ![Homepage](./images/Homepage.png)
+- **🏠 Homepage**  
+  ![Homepage](./images/homepage.png)
 
-- 🖼️ **Upload Image**  
-  ![Upload](./images/uploading.png)
+- **📤 Image Upload**  
+  ![Uploading](./images/uploading.png)
 
-- 📊 **Prediction Output**  
+- **📊 Prediction Result**  
   ![Prediction](./images/prediction_result.png)
 
-- 💡 **Precautions View**  
+- **💡 Precaution View**  
   ![Precautions](./images/precautions.png)
 
-- 🌍 **Voice + Language Selector**  
-  ![Voice & Language](./images/voice_language.png)
+---
+
+## ✅ Features
+
+- 📷 Upload leaf image to predict disease  
+- ⚡ Fast and accurate CNN predictions  
+- 📢 Voice output using browser TTS (no external APIs)  
+- 🌱 Precautions displayed for each disease  
+- 💻 Simple, responsive, and user-friendly interface
 
 ---
 
-## ✨ Key Features
+## 📌 Technologies Used
 
-- 🔍 Upload and detect plant leaf diseases in real-time  
-- 📊 High accuracy CNN model  
-- 📢 Voice-based prediction output (disease name only)  
-- 💡 Precautions for each identified disease  
-- 📱 Simple and responsive UI
-
----
-
-## 🛠️ Tools & Technologies Used
-
-| Layer        | Stack                            |
-|--------------|----------------------------------|
-| Frontend     | React (Vite), HTML, CSS, JS      |
-| Backend      | Python, Flask, Flask-CORS        |
-| ML Model     | TensorFlow, Keras (CNN), NumPy   |
-| Voice Output | gTTS                             |
-| Dataset      | PlantVillage                     |
+| Component   | Tools/Frameworks             |
+|-------------|-------------------------------|
+| Frontend    | React (Vite), HTML, CSS, JS   |
+| Backend     | Flask, Flask-CORS, Python     |
+| Model       | TensorFlow, Keras, NumPy      |
+| Utilities   | Pillow (PIL), SpeechSynthesis |
+| Dataset     | [PlantVillage on Kaggle](https://www.kaggle.com/datasets/emmarex/plantdisease)
 
 ---
 
-## 🚀 Deployment (Push Commands)
+## 🧠 Model Details
+
+- **Architecture**: CNN with custom layers  
+- **Input Size**: 128x128 pixels  
+- **Activation**: Softmax on final layer  
+- **Loss**: Categorical Crossentropy  
+- **Optimizer**: Adam  
+- **Epochs**: 5  
+- **Accuracy Achieved**: ~94%
+
+---
+
+## 🚀 Git Commands to Push Changes
 
 ```bash
 git add .
-git commit -m "Updated files"
+git commit -m "Updated frontend/backend with final model and UI"
 git push origin main
 ```
 
 ---
 
+> ⚠️ This project is designed for local usage. For deployment on cloud platforms, you will need to configure CORS, update API URLs, and ensure model size is suitable for hosting limitations.
