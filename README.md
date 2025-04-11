@@ -77,7 +77,7 @@ Now visit: [http://localhost:5173](http://localhost:5173)
 ## 📸 Screenshots
 
 - **🏠 Homepage**  
-  ![Homepage](./images/homepage.png)
+  ![Homepage](./images/Homepage.png)
 
 - **📤 Image Upload**  
   ![Uploading](./images/uploading.png)
