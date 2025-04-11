@@ -73,19 +73,19 @@ npm run dev
 
 ---
 
-## 🖼️ Screenshots
+## 📸 Screenshots
 
-### 🔹 Homepage
-![Homepage](images/homepage.png)
+🔹 **Homepage**  
+![Homepage](./screenshots/homepage.png)
 
-### 🔹 Upload Image
-![Upload](images/upload.png)
+🔹 **Upload Image**  
+![Upload](./screenshots/upload.png)
 
-### 🔹 Prediction Output
-![Prediction](images/prediction.png)
+🔹 **Prediction Output**  
+![Prediction](./screenshots/prediction.png)
 
-### 🔹 Precautions View
-![Precautions](images/precautions.png)
+🔹 **Precautions View**  
+![Precautions](./screenshots/precautions.png)
 
 ---
 
