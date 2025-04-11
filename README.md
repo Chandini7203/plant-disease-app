@@ -75,17 +75,20 @@ npm run dev
 
 ## 📸 Screenshots
 
-🔹 **Homepage**  
-![Homepage](./screenshots/homepage.png)
+- 🏠 **Homepage**  
+  ![Homepage](./images/Homepage.png)
 
-🔹 **Upload Image**  
-![Upload](./screenshots/upload.png)
+- 🖼️ **Upload Image**  
+  ![Upload](./images/uploading.png)
 
-🔹 **Prediction Output**  
-![Prediction](./screenshots/prediction.png)
+- 📊 **Prediction Output**  
+  ![Prediction](./images/prediction_result.png)
 
-🔹 **Precautions View**  
-![Precautions](./screenshots/precautions.png)
+- 💡 **Precautions View**  
+  ![Precautions](./images/precautions.png)
+
+- 🌍 **Voice + Language Selector**  
+  ![Voice & Language](./images/voice_language.png)
 
 ---
 
