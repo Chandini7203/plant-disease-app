@@ -6,13 +6,12 @@ A full-stack web application to detect diseases in plant leaves using a **Convol
 
 ## 🧠 Overview
 
-- **Goal**: Detect plant leaf diseases through image classification  
-- **Model**: CNN (trained on PlantVillage dataset)  
-- **Accuracy Achieved**: ~94% on validation data  
-- **Frontend**: React (Vite)  
-- **Backend**: Flask (Python)  
-- **Voice Output**: Basic browser-based speech synthesis for prediction result  
-- **Deployment**: Locally run on different ports using Flask + React
+- **Goal**: Detect diseases in plant leaves using image-based ML model
+- **Model**: CNN trained on the PlantVillage dataset
+- **Frontend**: React (with Vite)
+- **Backend**: Flask + TensorFlow
+- **Voice Feature**: Speaks out the prediction (only for disease name)
+- **Extra Modules Used**: `gTTS` for voice, `flask-cors` for CORS handling, `numpy`, `PIL`, etc.
 
 ---
 
@@ -128,10 +127,9 @@ Now visit: [http://localhost:5173](http://localhost:5173)
 
 ```bash
 git add .
-git commit -m "Updated frontend/backend with final model and UI"
+git commit -m "Updated files"
 git push origin main
 ```
 
 ---
 
-> ⚠️ This project is designed for local usage. For deployment on cloud platforms, you will need to configure CORS, update API URLs, and ensure model size is suitable for hosting limitations.
